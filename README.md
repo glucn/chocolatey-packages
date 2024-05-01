@@ -4,6 +4,8 @@ This is the repository containing Chocolatey packages maintained by [glucn](http
 
 ## List of packages
 - [aliyun-cli](https://community.chocolatey.org/packages/aliyun-cli)
+- [gcloudsdk](https://community.chocolatey.org/packages/gcloudsdk) (Thanks to previous maintainers [@IvanaGyro](https://github.com/IvanaGyro), [@gpoul](https://github.com/gpoul))
+
 
 ## Runbook for publishing a new version (as a reminder for future myself)
 - Update the following:
@@ -27,3 +29,4 @@ This is the repository containing Chocolatey packages maintained by [glucn](http
   - https://docs.chocolatey.org/en-us/community-repository/maintainers/package-maintainer-handover
 - Packages from the other maintainers
   - https://github.com/jtcmedia/chocolatey-packages
+  - https://github.com/IvanaGyro/chocolatey-packages

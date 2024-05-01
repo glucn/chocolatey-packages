@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop';
 
 $packageName = 'gcloudsdk'
 $softwareName = 'Google Cloud SDK*'
-$installerType = 'EXE'
+$installerType = 'exe'
 
 $silentArgs = '/S'
 $validExitCodes = @(0)

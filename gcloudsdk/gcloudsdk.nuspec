@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
 
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gcloudsdk</id>
-    <!-- Use the signing time of the executable file as the version. -->
-    <version>0.0.0.20220203</version>
-    <packageSourceUrl>https://github.com/gpoul/chocolatey-packages</packageSourceUrl>
-    <owners>gpoul</owners>
+    <version>474.0.0</version>
     <title>Google Cloud SDK (Install)</title>
-    <authors>Google</authors>
-    <projectUrl>https://cloud.google.com/sdk/</projectUrl>
-    <docsUrl>https://cloud.google.com/sdk/docs</docsUrl>
+    <authors>Google Cloud</authors>
+    <owners>chocolatey</owners>
+    <packageSourceUrl>https://github.com/glucn/chocolatey-packages/tree/main/gcloudsdk</packageSourceUrl>
+    <iconUrl>https://rawcdn.githack.com/glucn/chocolatey-packages/07bceec1bd39422ade9d02ffbb9d106807b3424b/icons/gcloudsdk.png</iconUrl>
+    <projectUrl>https://cloud.google.com/cli</projectUrl>
+    <docsUrl>https://cloud.google.com/sdk/gcloud</docsUrl>
+    <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <tags>google cloud cli gcloud sdk admin gcloudsdk gcp</tags>
-    <summary>SDK for Google Cloud</summary>
-    <description>
-The Google Cloud SDK is a set of tools for Google Cloud Platform. It contains gcloud, gsutil, and bq, which you can use to access Google Compute Engine, Google Cloud Storage, Google BigQuery, and other products and services from the command-line. You can run these tools interactively or in your automated scripts.
+    <summary>The Google Cloud CLI is a set of tools to create and manage Google Cloud resources. You can use these tools to perform many common platform tasks from the command line or through scripts and other automation.</summary>
+    <description><![CDATA[# Google Cloud CLI
 
-This package always installs the latest version of the Google Cloud SDK from Google. It first retrieves the most current installer, which then fetches the latest version of the SDK and installs it for all users in the default installation path. Updates can be performed through the gcloud cli.
-    </description>
+## What is the gcloud CLI?
+
+The Google Cloud CLI is a set of tools to create and manage Google Cloud resources. You can use these tools to perform many common platform tasks from the command line or through scripts and other automation.
+
+For example, you can use the gcloud CLI to create and manage the following:
+
+    - Compute Engine virtual machine instances and other resources
+    - Cloud SQL instances
+    - Google Kubernetes Engine clusters
+    - Dataproc clusters and jobs
+    - Cloud DNS managed zones and record sets
+    - Cloud Deployment Manager deployments
+
+You can also use the gcloud CLI to deploy App Engine applications, manage authentication, customize local configuration, and perform other tasks.
+
+## The gcloud CLI cheat sheet
+
+For a quick introduction to the gcloud CLI, a list of commonly used commands, and a look at how these commands are structured, see the [gcloud CLI cheat sheet](https://cloud.google.com/sdk/docs/cheatsheet).
+
+## Configurations
+
+A configuration is a set of gcloud CLI properties. A configuration works like a `profile`.
+
+When you start using the gcloud CLI, you'll work with a single configuration named `default` and you can set properties by running `gcloud init` or `gcloud config set`. This single default configuration is suitable for most use cases.
+
+To work with multiple projects or authorization accounts, you can set up multiple configurations with `gcloud config configurations create` and switch among the configurations. Within a configuration, you can customize properties. For example, to set your project within an active configuration use the `project` property:
+
+```
+gcloud config set project <project-id>
+```
+
+For a detailed account of these concepts, see the [Configurations guide](https://cloud.google.com/sdk/docs/configurations).
+
+]]></description>
+    <releaseNotes>https://cloud.google.com/cli#whats-new</releaseNotes>
     <dependencies>
       <dependency id="python3" />
     </dependencies>
