@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gcloudsdk</id>
-    <version>474.0.0</version>
+    <version>475.0.0</version>
     <title>Google Cloud SDK (Install)</title>
     <authors>Google Cloud</authors>
     <owners>chocolatey</owners>
@@ -45,7 +45,7 @@ When you start using the gcloud CLI, you'll work with a single configuration nam
 To work with multiple projects or authorization accounts, you can set up multiple configurations with `gcloud config configurations create` and switch among the configurations. Within a configuration, you can customize properties. For example, to set your project within an active configuration use the `project` property:
 
 ```
-gcloud config set project <project-id>
+gcloud config set project project-id
 ```
 
 For a detailed account of these concepts, see the [Configurations guide](https://cloud.google.com/sdk/docs/configurations).
