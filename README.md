@@ -8,6 +8,7 @@ This is the repository containing Chocolatey packages maintained by [glucn](http
 
 
 ## Runbook for publishing a new version (as a reminder for future myself)
+- (Optional) Calculate checksum: `Get-FileHash {file}`
 - Update the following:
   - chocolateyinstall.ps1
     - $url64
