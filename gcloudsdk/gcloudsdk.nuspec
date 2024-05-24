@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gcloudsdk</id>
-    <version>476.0.0</version>
+    <version>477.0.0</version>
     <title>Google Cloud SDK (Install)</title>
     <authors>Google</authors>
     <owners>chocolatey</owners>
@@ -51,7 +51,7 @@ gcloud config set project project-id
 For a detailed account of these concepts, see the [Configurations guide](https://cloud.google.com/sdk/docs/configurations).
 
 ]]></description>
-    <releaseNotes>https://cloud.google.com/cli#whats-new</releaseNotes>
+    <releaseNotes>https://cloud.google.com/sdk/docs/release-notes</releaseNotes>
     <dependencies>
       <dependency id="python3" version="[3.8.0,3.12.3]"/>
     </dependencies>
