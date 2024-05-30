@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- TODO: Consider to rename it -->
+    <id>wechatdevtools</id> 
+    <version>1.06.2405010</version>
+    <title>Weixin DevTools (Install)</title>
+    <authors>Tencent</authors>
+    <owners>glucn</owners>
+    <packageSourceUrl>https://github.com/glucn/chocolatey-packages/tree/main/weixin-devtools</packageSourceUrl>
+    <iconUrl>https://rawcdn.githack.com/glucn/chocolatey-packages/0fb310cd10fa8b677ebf777aaa04850a31b23d27/icons/weixin-devtools.png</iconUrl>
+    <projectUrl>https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html</projectUrl>
+    <docsUrl>https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html</docsUrl>
+    <licenseUrl>https://developers.weixin.qq.com/miniprogram/product/service/</licenseUrl>
+    <tags>tencent weixin wechat devtools</tags>
+    <summary>Weixin DevTools can help developers develop and debug Weixin Mini Programs more simply and efficiently.</summary>
+    <description><![CDATA[# Weixin DevTools
+
+## Overview
+
+To help developers develop and debug Weixin Mini Programs more simply and efficiently, we have launched the new Weixin DevTools based on the original Official Account web debugging tools. Therefore, we now have two developer modes: Official Account web debugging and Mini Program debugging.
+
+    - With Official Account web debugging, developers can debug Weixin web authorization and Weixin JS-SDK.
+    - With Mini Program debugging, developers can debug the Mini Program APIs and pages, view and edit codes, preview and publish the Mini Program, etc.
+
+]]></description>
+    <releaseNotes>https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
