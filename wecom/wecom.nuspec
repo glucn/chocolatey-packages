@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- https://work.weixin.qq.com/wework_admin/commdownload?platform=win -->
+
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>wecom</id> 
+    <version>4.1.26.6019</version>
+    <title>WeCom (Install)</title>
+    <authors>Tencent</authors>
+    <owners>glucn</owners>
+    <packageSourceUrl>https://github.com/glucn/chocolatey-packages/tree/main/wecom</packageSourceUrl>
+    <iconUrl>https://rawcdn.githack.com/glucn/chocolatey-packages/2bb1b3ffd5d44edc2b9192d14ef987f47cbe2d1c/icons/wecom.png</iconUrl>
+    <projectUrl>https://work.weixin.qq.com</projectUrl>
+    <docsUrl>https://open.work.weixin.qq.com/help2/pc</docsUrl>
+    <licenseUrl>https://work.weixin.qq.com/nl/service_agreement</licenseUrl>
+    <tags>wecom tencent weixin wechat collaboration wxwork</tags>
+    <summary>WeCom is a business communication and office collaboration tool developed by Tencent WeChat Team.</summary>
+    <description><![CDATA[# WeCom
+
+#### Same Communication Experience as WeChat
+
+Hit the ground running in a familiar environment without any learning costs.
+
+#### Connecting with WeChat
+
+Add WeChat users as contacts, run Mini Programs and use WeChat Pay features in the app.
+
+#### A Wide Array of OA Tools
+
+Leverage various built-in OA tools (Attendance, Approvals, and more), third-party tools, as well as user-developed tools integrated via APIs.
+
+#### Comprehensive Security Protection
+
+Internationally recognized and bank-level encryption that ensures data security
+
+]]></description>
+    <releaseNotes>https://work.weixin.qq.com/</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
