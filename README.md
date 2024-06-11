@@ -5,6 +5,8 @@ This is the repository containing Chocolatey packages maintained by [glucn](http
 ## List of packages
 - [aliyun-cli](https://community.chocolatey.org/packages/aliyun-cli)
 - [gcloudsdk](https://community.chocolatey.org/packages/gcloudsdk) (Thanks to previous maintainers [@IvanaGyro](https://github.com/IvanaGyro), [@gpoul](https://github.com/gpoul))
+- [weixin-devtools](https://community.chocolatey.org/packages/wechatdevtools)
+- [wecom](https://community.chocolatey.org/packages/wecom)
 
 
 ## Runbook for publishing a new version (as a reminder for future myself)
