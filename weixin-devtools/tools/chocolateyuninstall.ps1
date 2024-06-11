@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop';
 
-$packageName = 'weixin-devtools'
+$packageName = 'wechatdevtools'
 $softwareName = '微信开发者工具*'
 $installerType = 'exe'
 
