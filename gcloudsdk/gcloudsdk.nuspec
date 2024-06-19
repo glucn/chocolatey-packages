@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gcloudsdk</id>
-    <version>480.0.0</version>
+    <version>481.0.0</version>
     <title>Google Cloud SDK (Install)</title>
     <authors>Google</authors>
     <owners>glucn</owners>
