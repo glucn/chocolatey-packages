@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop';
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url        = 'https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe'
-$checksum   = 'B1A79901DEB8E3BB861BFE4126BCEBB51E1EFFAA8BACD227A4372B9EA77205EE'
+$checksum   = '707E2F76EF6A326B33F0A34944EE9E2E3F57A783BBCD63DAD22DDFC0662643E7'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
