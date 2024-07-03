@@ -7,7 +7,7 @@
   <metadata>
     <id>wecom</id> 
     <version>4.1.26.6019</version>
-    <title>WeCom (Install)</title>
+    <title>WeCom</title>
     <authors>Tencent</authors>
     <owners>glucn</owners>
     <packageSourceUrl>https://github.com/glucn/chocolatey-packages/tree/main/wecom</packageSourceUrl>
