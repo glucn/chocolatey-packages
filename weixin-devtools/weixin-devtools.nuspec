@@ -5,8 +5,8 @@
   <metadata>
     <!-- TODO: Consider to rename it -->
     <id>wechatdevtools</id> 
-    <version>1.06.2405010</version>
-    <title>Weixin DevTools (Install)</title>
+    <version>1.06.2405020</version>
+    <title>Weixin DevTools</title>
     <authors>Tencent</authors>
     <owners>glucn</owners>
     <packageSourceUrl>https://github.com/glucn/chocolatey-packages/tree/main/weixin-devtools</packageSourceUrl>
