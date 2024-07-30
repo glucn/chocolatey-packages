@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop';
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url        = 'https://work.weixin.qq.com/wework_admin/commdownload?platform=win'
-$checksum   = 'D38FAEC239E0DF43679E580D3DD9CFFE4122FDDEC08C6D1C1ED13180A048CF13'
+$checksum   = 'FE454ACAF5455B49414167A6C3000F8EBD9070FB708C9DABDBEEE7CD2B6C68C8'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
