@@ -1,9 +1,9 @@
 $ErrorActionPreference = 'Stop';
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64        = 'https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-windows-x86_64.zip'
+$url64        = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-486.0.0-windows-x86_64.zip'
 $checksum64   = '9FD851D29CEB23145E002B6E2E5D349B423224C6A9FF8FDE0E65458E66CEF1E1'
-$url32        = 'https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-windows-x86.zip'
+$url32        = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-486.0.0-windows-x86.zip'
 $checksum32   = '5668956C3F9A5F713B2BE5812F1544454E54AF4550EAEC64314DDCA749B97717'
 
 $packageArgs = @{
@@ -19,5 +19,4 @@ $packageArgs = @{
 
 Install-ChocolateyZipPackage @packageArgs
 
-Write-Host "Adding to PATH if needed"
-Install-ChocolateyPath -Path "$($toolsDir)\google-cloud-sdk\bin" -PathType 'User'
+Install-ChocolateyPath -Path "$($toolsDir)\google-cloud-sdk\bin"
