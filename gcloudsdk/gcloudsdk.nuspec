@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gcloudsdk</id>
-    <version>487.0.0</version>
+    <version>488.0.0</version>
     <title>Google Cloud SDK</title>
     <authors>Google</authors>
     <owners>glucn</owners>
@@ -52,6 +52,9 @@ For a detailed account of these concepts, see the [Configurations guide](https:/
 
 ]]></description>
     <releaseNotes>https://cloud.google.com/sdk/docs/release-notes</releaseNotes>
+    <dependencies>
+      <dependency id="python3" version="[3.8.0,)"/>
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
