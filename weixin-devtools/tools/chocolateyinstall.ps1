@@ -1,10 +1,10 @@
 $ErrorActionPreference = 'Stop';
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64        = 'https://servicewechat.com/wxa-dev-logic/download_redirect?type=win32_x64&from=mpwiki&download_version=1062405020&version_type=1'
-$checksum64   = 'C5F71BC808FE92F9F17F9320555FC94E39B6DB4DB78492BDA1F484C2C9630BC7'
-$url32        = 'https://servicewechat.com/wxa-dev-logic/download_redirect?type=win32_ia32&from=mpwiki&download_version=1062405020&version_type=1'
-$checksum32   = '52CC0BD75116356D7F7535E08B60E44C16F9AD0378AD15581F7497E53604F223'
+$url64        = 'https://servicewechat.com/wxa-dev-logic/download_redirect?type=win32_x64&from=mpwiki&download_version=1062407120&version_type=1'
+$checksum64   = '9B9E2B5660E148DF5203EC7C41F6646F69A045E478405CEA48B5E76B09AC31E5'
+$url32        = 'https://servicewechat.com/wxa-dev-logic/download_redirect?type=win32_ia32&from=mpwiki&download_version=1062407120&version_type=1'
+$checksum32   = '7327707550EBE29D31C98FAA8355C43191B4AFBD8485E3C8247231467B35BC97'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
