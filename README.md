@@ -33,3 +33,5 @@ This is the repository containing Chocolatey packages maintained by [glucn](http
 - Packages from the other maintainers
   - https://github.com/jtcmedia/chocolatey-packages
   - https://github.com/IvanaGyro/chocolatey-packages
+- Blog
+  - https://glucn.com
