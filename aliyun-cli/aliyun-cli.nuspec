@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>aliyun-cli</id>
-    <version>3.0.252</version>
+    <version>3.0.253</version>
     <title>Alibaba Cloud CLI (aliyun-cli)</title>
     <authors>Alibaba Cloud</authors>
     <owners>chocolatey</owners>
@@ -38,7 +38,7 @@ The release notes for the CLI can be found in the [CHANGELOG](https://github.com
 If you need detailed installation steps or compile the installation steps, please visit [Installation Guide](https://www.alibabacloud.com/help/en/cli/install-cli-on-windows).
 
 ## Maintainer's Note
-Hello all, this is glucn. I maintain this Chocolatey package, and a few other packages using my spare time, for free. Here is my personal blog: [glucn.com](https://glucn.com)
+Hello all, this is glucn. I maintain this Chocolatey package, and a few other packages using my spare time, for free. You can find more about me on my personal blog: [glucn.com](https://glucn.com)
 ]]></description>
   <releaseNotes>https://github.com/aliyun/aliyun-cli/releases</releaseNotes>
   </metadata>
