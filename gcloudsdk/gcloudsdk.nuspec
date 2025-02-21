@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>gcloudsdk</id>
-    <version>510.0.0</version>
+    <version>511.0.0</version>
     <title>Google Cloud SDK</title>
     <authors>Google</authors>
     <owners>glucn</owners>
@@ -50,6 +50,8 @@ gcloud config set project project-id
 
 For a detailed account of these concepts, see the [Configurations guide](https://cloud.google.com/sdk/docs/configurations).
 
+## Maintainer's Note
+Hello all, this is glucn. I maintain this Chocolatey package, and a few other packages using my spare time, for free. You can find more about me on my personal blog: [glucn.com](https://glucn.com)
 ]]></description>
     <releaseNotes>https://cloud.google.com/sdk/docs/release-notes</releaseNotes>
   </metadata>
