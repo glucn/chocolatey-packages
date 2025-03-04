@@ -6,7 +6,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wecom</id> 
-    <version>4.1.32.6005</version>
+    <version>4.1.33.6009</version>
     <title>WeCom</title>
     <authors>Tencent</authors>
     <owners>glucn</owners>
@@ -19,19 +19,19 @@
     <summary>WeCom is a business communication and office collaboration tool developed by Tencent WeChat Team.</summary>
     <description><![CDATA[# WeCom
 
-#### Same Communication Experience as WeChat
+## Same Communication Experience as WeChat
 
 Hit the ground running in a familiar environment without any learning costs.
 
-#### Connecting with WeChat
+## Connecting with WeChat
 
 Add WeChat users as contacts, run Mini Programs and use WeChat Pay features in the app.
 
-#### A Wide Array of OA Tools
+## A Wide Array of OA Tools
 
 Leverage various built-in OA tools (Attendance, Approvals, and more), third-party tools, as well as user-developed tools integrated via APIs.
 
-#### Comprehensive Security Protection
+## Comprehensive Security Protection
 
 Internationally recognized and bank-level encryption that ensures data security
 
