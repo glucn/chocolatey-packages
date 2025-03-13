@@ -5,7 +5,7 @@
   <metadata>
     <!-- TODO: Consider to rename it -->
     <id>wechatdevtools</id> 
-    <version>1.06.2409140</version>
+    <version>1.06.2412050</version>
     <title>Weixin DevTools</title>
     <authors>Tencent</authors>
     <owners>glucn</owners>
@@ -25,6 +25,8 @@ To help developers develop and debug Weixin Mini Programs more simply and effici
     - With Official Account web debugging, developers can debug Weixin web authorization and Weixin JS-SDK.
     - With Mini Program debugging, developers can debug the Mini Program APIs and pages, view and edit codes, preview and publish the Mini Program, etc.
 
+## Maintainer's Note
+Hello all, this is glucn. I maintain this Chocolatey package, and a few other packages using my spare time, for free. You can find more about me on my personal blog: [glucn.com](https://glucn.com)
 ]]></description>
     <releaseNotes>https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html</releaseNotes>
   </metadata>
