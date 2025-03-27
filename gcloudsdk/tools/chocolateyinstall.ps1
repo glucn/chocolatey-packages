@@ -1,10 +1,10 @@
 $ErrorActionPreference = 'Stop';
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64      = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-515.0.0-windows-x86_64.zip'
-$checksum64 = '0EF1E06481450E76164D3FBBB5CFAC00B38ABCBF536B88D1E162E40CCF76B44F'
-$url32      = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-515.0.0-windows-x86.zip'
-$checksum32 = '2E12127FB58222D4A45F66F71E6BDD11ED25E546A42524403EB4AEE50FC7899F'
+$url64      = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-516.0.0-windows-x86_64.zip'
+$checksum64 = '5CF75A32A3191402394331F9A94725DFB965187E6F8FC5E9C2E3703B0F6B431F'
+$url32      = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-516.0.0-windows-x86.zip'
+$checksum32 = 'B162C0BB9395C273D781EA182A5DC2118046BFB3BBB84E565FEACD25CFC74BCD'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
