@@ -19,4 +19,14 @@ $packageArgs = @{
 
 Install-ChocolateyZipPackage @packageArgs
 
+# Delete symlink files that will fail the checksum process.
+# Example error:
+#
+# [WARN ] - Error computing hash for 'C:\ProgramData\chocolatey\lib\gcloudsdk\tools\google-cloud-sdk\platform\gsutil\third_party\funcsigs\docs\index.rst'
+#  Hash will be special code for locked file 
+#  Captured error:
+#   The filename, directory name, or volume label syntax is incorrect.
+Write-Verbose 'Deleting symlink files that will fail the checksum process'
+Get-ChildItem -Path "$toolsDir" -Recurse -File |  Where-Object { $_.LinkType -ne $null -or $_.Attributes -match "ReparsePoint" } | Remove-Item -Force
+
 Install-ChocolateyPath -Path "$($toolsDir)\google-cloud-sdk\bin"
