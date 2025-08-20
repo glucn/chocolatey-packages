@@ -31,4 +31,4 @@ Install-ChocolateyZipPackage @packageArgs
 Write-Verbose 'Deleting symlink files that will fail the checksum process'
 Get-ChildItem -Path "$toolsDir" -Recurse -File |  Where-Object { $_.LinkType -ne $null -or $_.Attributes -match "ReparsePoint" } | Remove-Item -Force
 
-Install-ChocolateyPath -Path "$($toolsDir)\google-cloud-sdk\bin"
+Install-ChocolateyPath -pathToInstall "$($toolsDir)\google-cloud-sdk\bin"
