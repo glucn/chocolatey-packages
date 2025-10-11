@@ -1,0 +1,6 @@
+google-cloud-sdk\platform\gsutil\third_party\funcsigs\docs\index.rst
+google-cloud-sdk\platform\gsutil\third_party\google-auth-library-python-httplib2\docs\CHANGELOG.md
+google-cloud-sdk\platform\gsutil\third_party\google-auth-library-python-httplib2\docs\README.rst
+google-cloud-sdk\platform\gsutil\third_party\mock\docs\changelog.txt
+google-cloud-sdk\platform\gsutil\third_party\requests\tests\certs\mtls\client\ca
+google-cloud-sdk\platform\gsutil\third_party\requests\tests\certs\valid\ca

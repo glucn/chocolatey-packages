@@ -54,6 +54,9 @@ For a detailed account of these concepts, see the [Configurations guide](https:/
 Hello all, this is glucn. I maintain this Chocolatey package, and a few other packages using my spare time, for free. You can find more about me on my personal blog: [glucn.com](https://glucn.com)
 ]]></description>
     <releaseNotes>https://cloud.google.com/sdk/docs/release-notes</releaseNotes>
+    <dependencies>
+      <dependency id="7zip" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
