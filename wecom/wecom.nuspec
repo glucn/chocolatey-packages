@@ -6,7 +6,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wecom</id> 
-    <version>4.1.41.6006</version>
+    <version>5.0.0.8002</version>
     <title>WeCom</title>
     <authors>Tencent</authors>
     <owners>glucn</owners>
