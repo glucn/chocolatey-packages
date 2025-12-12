@@ -4,7 +4,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>aliyun-cli</id>
-    <version>3.2.0</version>
+    <version>3.2.1</version>
     <title>Alibaba Cloud CLI (aliyun-cli)</title>
     <authors>Alibaba Cloud</authors>
     <owners>chocolatey</owners>
