@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64 = 'https://aliyuncli.alicdn.com/aliyun-cli-windows-3.2.12-amd64.zip'
-$checksum64 = '5129d5fa56e27d5564d96d0a4db372ed3f9c52b38581b8899761f50083810964'
+$url64 = 'https://aliyuncli.alicdn.com/aliyun-cli-windows-3.2.13-amd64.zip'
+$checksum64 = '4f297ee9f3f4671d5a89ee87583e766e077cf922e3c6701dd097cbe8fdeac6f0'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
