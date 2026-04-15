@@ -2,11 +2,11 @@ $ErrorActionPreference = 'Stop';
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url64 = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-564.0.0-windows-x86_64.zip'
-$checksum64 = '6f3e141ba21c34e658c391eadc4651b05aa9c25c9292f0cb29e48ae663f72b32'
+$url64 = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-565.0.0-windows-x86_64.zip'
+$checksum64 = '0db0d27999867ed7fd6d0c3fbc8f9f668720edf8c345a89869eba57a28dff8ab'
 
-$url32 = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-564.0.0-windows-x86.zip'
-$checksum32 = 'c8c6f4e5cbf22bb64ec0a8cb84a92d18f8ed97bc16467d637748cb184b33059b'
+$url32 = 'https://storage.googleapis.com/cloud-sdk-release/google-cloud-cli-565.0.0-windows-x86.zip'
+$checksum32 = '0bd94f904aebc435a9e5fad1514369817ce779aaab49bbe17b13f9d38c06e0da'
 
 # The following implementation is a workaround for the issue with symlinks in the package
 # Please refer to this issue for more details: https://github.com/glucn/chocolatey-packages/issues/3
