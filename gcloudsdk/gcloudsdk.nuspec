@@ -55,7 +55,6 @@ Hello all, this is glucn. I maintain this Chocolatey package, and a few other pa
 ]]></description>
     <releaseNotes>https://cloud.google.com/sdk/docs/release-notes</releaseNotes>
     <dependencies>
-      <dependency id="7zip" />
     </dependencies>
   </metadata>
   <files>

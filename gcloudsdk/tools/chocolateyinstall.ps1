@@ -38,123 +38,30 @@ $downloadFilePath = Join-Path $tempDir "$($packageName)Install.$fileType"
 
 $zipfileFullPath = Get-ChocolateyWebFile $packageName $downloadFilePath $url $url64bit -checkSum $checkSum -checksumType $checksumType -checkSum64 $checkSum64 -checksumType64 $checksumType64 -getOriginalFileName
 
-# Call 7zip to unzip the download file
-# Ref: https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ChocolateyUnzip.ps1
-
-if (Test-Path "${Env:ProgramFiles(x86)}\7-zip") {
-  $7zip = "${Env:ProgramFiles(x86)}\7-zip\7z.exe"
-}
-elseif (Test-Path "$Env:ProgramFiles\7-zip") {
-  $7zip = "$Env:ProgramFiles\7-zip\7z.exe"
-}
-else {
-  Write-Debug "7-zip is not installed. Aborting..."
+if (Get-ChildItem -Path $toolsDir) {
+  Remove-Item -Path "$toolsDir\*" -Recurse -Force
 }
 
-# 32-bit 7z would not find C:\Windows\System32\config\systemprofile\AppData\Local\Temp,
-# because it gets translated to C:\Windows\SysWOW64\... by the WOW redirection layer.
-# Replace System32 with sysnative, which does not get redirected.
-# 32-bit 7z is required so it can see both architectures
-if ([IntPtr]::Size -ne 4) {
-  $fileFullPathNoRedirection = $zipfileFullPath -ireplace ([System.Text.RegularExpressions.Regex]::Escape([Environment]::GetFolderPath('System'))), (Join-Path $Env:SystemRoot 'SysNative')
-  $destinationNoRedirection = $destination -ireplace ([System.Text.RegularExpressions.Regex]::Escape([Environment]::GetFolderPath('System'))), (Join-Path $Env:SystemRoot 'SysNative')
-}
-else {
-  $fileFullPathNoRedirection = $zipfileFullPath
-  $destinationNoRedirection = $destination
-}
-
-$workingDirectory = $(Get-Location -PSProvider 'FileSystem')
-if ($null -eq $workingDirectory -or $null -eq $workingDirectory.ProviderPath) {
-  Write-Debug "Unable to use current location for Working Directory. Using Cache Location instead."
-  $workingDirectory = $env:TEMP
-}
-$workingDirectory = $workingDirectory.ProviderPath
-
-# The package contains some symlinks that are considered to be dangerous by 7zip
-# Ref: https://cwe.mitre.org/data/definitions/59.html
-# We will have to exclude those symlinks
-$excludeFieList = Join-Path $toolsDir 'exclude-list.txt'
-
-$loggingParam = '-bb1'
-$params = "x -aoa -bd $loggingParam -o`"$destinationNoRedirection`" -y `"$fileFullPathNoRedirection`" -x@`"$excludeFieList`""
-
-Write-Debug "Executing command ['$7zip' $params]"
-
-# Redirecting output slows things down a bit.
-$writeOutput = {
-  if ($EventArgs.Data -ne $null) {
-    $line = $EventArgs.Data
-    Write-Verbose "$line"
-    if ($line.StartsWith("- ")) {
-      $global:zipFileList.AppendLine($global:zipDestinationFolder + "\" + $line.Substring(2))
-    }
-  }
-}
-
-$writeError = {
-  if ($EventArgs.Data -ne $null) {
-    Write-Error "$($EventArgs.Data)"
-  }
-}
-
-$process = New-Object System.Diagnostics.Process
-$process.EnableRaisingEvents = $true
-Register-ObjectEvent -InputObject $process -SourceIdentifier "LogOutput_ChocolateyZipProc" -EventName OutputDataReceived -Action $writeOutput | Out-Null
-Register-ObjectEvent -InputObject $process -SourceIdentifier "LogErrors_ChocolateyZipProc" -EventName ErrorDataReceived -Action $writeError | Out-Null
-
-$process.StartInfo = New-Object System.Diagnostics.ProcessStartInfo($7zip, $params)
-$process.StartInfo.RedirectStandardOutput = $true
-$process.StartInfo.RedirectStandardError = $true
-$process.StartInfo.UseShellExecute = $false
-$process.StartInfo.WorkingDirectory = $workingDirectory
-$process.StartInfo.WindowStyle = [System.Diagnostics.ProcessWindowStyle]::Hidden
-$process.StartInfo.CreateNoWindow = $true
-$process.Start() | Out-Null
-$process.BeginOutputReadLine()
-$process.BeginErrorReadLine()
-$process.WaitForExit()
-
-Unregister-Event -SourceIdentifier "LogOutput_ChocolateyZipProc"
-Unregister-Event -SourceIdentifier "LogErrors_ChocolateyZipProc"
-
-for ($loopCount = 1; $loopCount -le 15; $loopCount++) {
-  if ($process.HasExited) {
-    break;
-  }
-  Write-Debug "Waiting for 7z.exe process to exit - $loopCount/15 seconds";
-  Start-Sleep 1;
-}
-    
-$exitCode = $process.ExitCode
-$process.Dispose()
-
-Set-PowerShellExitCode $exitCode
-Write-Debug "Command ['$7zip' $params] exited with `'$exitCode`'."
-Write-Debug "7z exit code: $exitCode"
-
-switch ($exitCode) {
-  0 {
-    break
-  }
-  1 {
-    throw 'Some files could not be extracted.'
-  } # this one is returned e.g. for access denied errors
-  2 {
-    throw '7-Zip encountered a fatal error while extracting the files.'
-  }
-  7 {
-    throw '7-Zip command line error.'
-  }
-  8 {
-    throw '7-Zip out of memory.'
-  }
-  255 {
-    throw 'Extraction cancelled by the user.'
-  }
-  default {
-    throw '7-Zip signalled an unknown error (code $exitCode)'
-  }
+# This try catch attempts to replicate the 7zip error handling from the Get-ChocolateyUnzip helper function
+# https://github.com/chocolatey/choco/blob/develop/src/chocolatey.resources/helpers/functions/Get-ChocolateyUnzip.ps1
+$errorMessageAddendum = "This is most likely an issue with the '$env:chocolateyPackageName' package and not with Chocolatey itself. Please follow up with the package maintainer(s) directly."
+try {
+  Write-Debug "Extracting $zipfileFullPath to $toolsDir..."
+  Add-Type -Assembly "System.IO.Compression.Filesystem"
+  [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfileFullPath, $toolsDir)
+  Write-Debug "Extraction completed"
+} catch [System.IO.PathTooLongException], [System.IO.DirectoryNotFoundException], [System.NotSupportedException], [System.IO.FileNotFoundException], [System.IO.InvalidDataException] {
+  Set-PowershellExitCode 2
+  throw "Encountered a fatal error while extracting the files: $($_.Message) $errorMessageAddendum"
+} catch [System.IO.IOException], [System.UnauthorizedAccessException] {
+  Set-PowershellExitCode 1
+  throw "Some files could not be extracted: $($_.Message) $errorMessageAddendum"
+} catch [System.ArgumentException], [System.ArgumentNullException] {
+  Set-PowerShellExitCode 7
+  throw "Invalid parameters were passed to ExtractToDirectory: $($_.Message) $errorMessageAddendum"
+} catch {
+  Set-PowerShellExitCode 3
+  throw "An unknown error occurred while extracting files: $($_.Message) $errorMessageAddendum"
 }
 
 # Add to system path
